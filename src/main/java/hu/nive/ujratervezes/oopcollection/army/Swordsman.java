@@ -12,6 +12,8 @@ public class Swordsman extends MilitaryUnit {
     public void sufferDamage(int damage) {
         if (hasShield) {
             hasShield = false;
+        } else if (super.getHasArmor()) {
+            this.setHitPoints(getHitPoints() - damage / 2);
         } else {
             super.setHitPoints(this.getHitPoints() - damage);
         }

@@ -20,7 +20,7 @@ public abstract class MilitaryUnit {
         return damage;
     }
 
-    public boolean isHasArmor() {
+    public boolean getHasArmor() {
         return hasArmor;
     }
 
@@ -29,7 +29,11 @@ public abstract class MilitaryUnit {
     }
 
     public void sufferDamage(int damage) {
-        this.hitPoints = hitPoints - damage;
+        if (this.hasArmor) {
+            this.hitPoints = hitPoints - damage / 2;
+        } else {
+            this.hitPoints = hitPoints - damage;
+        }
     }
 
     public void setHitPoints(int hitPoints) {

@@ -14,17 +14,19 @@ public class Army {
     public void damageAll(int damage) {
         for (MilitaryUnit unit : army) {
             unit.sufferDamage(damage);
-            if (unit.getHitPoints() < 25) {
-                army.remove(unit);
-            }
         }
+        cleanUpFallenUnits();
+    }
+
+    private void cleanUpFallenUnits() {
+        army.removeIf(unit -> unit.getHitPoints() < 25);
     }
 
     public int getArmyDamage() {
         int totalArmyDamage = 0;
 
         for (MilitaryUnit unit : army) {
-            totalArmyDamage += unit.getDamage();
+            totalArmyDamage += unit.doDamage();
         }
 
         return totalArmyDamage;

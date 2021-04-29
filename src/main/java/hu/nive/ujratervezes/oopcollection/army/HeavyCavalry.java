@@ -18,6 +18,4 @@ public class HeavyCavalry extends MilitaryUnit {
       }
     }
 
-
-
 }
