@@ -4,8 +4,8 @@ public class Swordsman extends MilitaryUnit {
 
     private boolean hasShield = true;
 
-    public Swordsman(boolean hasShield) {
-        super(100, 10, hasShield);
+    public Swordsman(boolean hasArmor) {
+        super(100, 10, hasArmor);
     }
 
     @Override
